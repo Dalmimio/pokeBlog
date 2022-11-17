@@ -1,0 +1,192 @@
+<script septup>
+
+</script>
+
+<template>
+    <header>
+        <nav class="d-flex w-100 justify-content-between">
+        <h1 class="navbar-logo">PB</h1>
+        <div class="d-flex gap-3 align-items-center nav navbar-menu">
+            <RouterLink to="/">
+                <font-awesome-icon icon="fa-solid fa-house-chimney" />
+                <span class="navbar-logo-text">Home</span>
+            </RouterLink>
+            <RouterLink to="/profile">
+                <font-awesome-icon icon="fa-solid fa-user" />
+                <span class="navbar-logo-text">Profile</span>
+            </RouterLink>
+            <RouterLink to="/news">
+                <font-awesome-icon icon="fa-solid fa-newspaper" />
+                <span class="navbar-logo-text">News</span>
+            </RouterLink>
+            <RouterLink to="/save">
+                <font-awesome-icon icon="fa-solid fa-bookmark" />
+                <span class="navbar-logo-text">Saved</span>
+            </RouterLink>
+            <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <font-awesome-icon icon="fa-solid fa-bars" />
+            </a>
+            
+            
+        
+        </div>
+        
+        <!-- Off canvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">PokeBlog</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column gap-2">
+            <RouterLink to="/about"><font-awesome-icon icon="fa-solid fa-users" /> About us</RouterLink>
+            <RouterLink to="/contact"> <font-awesome-icon icon="fa-solid fa-id-badge" /> Contact us</RouterLink>
+            <RouterLink to="/workwithus"><font-awesome-icon icon="fa-solid fa-briefcase" /> Work with us</RouterLink>
+            <RouterLink to="/terms"><font-awesome-icon icon="fa-solid fa-pen-ruler" /> Terms and conditions</RouterLink>
+            <RouterLink to="/login" class="btn btn-more">Login</RouterLink>
+
+
+        </div>
+        </div>
+    </nav>
+    </header>
+
+    
+
+</template>
+
+
+
+
+<style scoped>
+    
+header{
+    background-color: var(--color-primary);
+    min-height: 10vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+nav{
+    gap: 1rem;
+    margin: 0;
+    padding: .2rem;
+}
+nav img{
+    width: 40px;
+    height: 60px;
+}
+nav .nav a{
+    color: var(--color-text-ligth);
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+}
+nav .nav a span{
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+.navbar-logo-text{
+    display: none;
+    height: 19px;
+}
+.navbar-menu{
+    transition: .3s;
+}
+.navbar-menu a{
+    position: relative;
+    flex: 0 0 36px;
+    display: grid;
+    width: auto;
+    opacity: .8;
+    transition: .5s;
+}
+
+
+
+.navbar-menu > a.active::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    translate: -50% 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+}
+.navbar-menu a:hover{
+    border-bottom: var(--color-principal-text) solid 1px;
+    transform: scaleY(1.5px);
+}
+.offcanvas{
+    background-color: var(--color-primary);
+    height: 60%;
+    width: 250px !important;
+    top: 51px !important;
+    border-radius: 1rem 0rem 0rem 1rem;
+}
+.offcanvas a{
+    color: var(--color-text-ligth);
+    text-decoration: none;
+    font-size: 1rem;
+        
+}
+.offcanvas-title, nav h1{
+    color: yellow;
+    -webkit-text-stroke: blue 1.5px;
+    font-size: 2rem;
+}
+.offcanvas svg{
+    margin-right: .5rem;
+}
+
+
+@media only screen and (min-width: 700px){
+    .navbar-logo-text{
+        display: none;
+        height: 19px;
+        display: flex;
+    }
+
+}
+@media only screen and (min-width: 600px){
+    .navbar-menu{
+        flex: 1 1 auto;
+        justify-content: center;
+        margin-right: 120px;
+    }
+    .navbar-menu > a:last-child{
+        position: absolute;
+        right: 20px;
+    }
+}
+@media screen and (max-width: 599px){
+    .navbar{
+        padding: 0 .5rem;
+    }
+    .navbar-menu{
+        gap: 0 !important;
+        
+    }
+    .navbar-menu a{
+        margin: 0 5px;
+        width: 40px;
+    }
+}
+@media screen and (max-width: 350px){
+    .navbar{
+        padding: 0 .5rem;
+    }
+    .navbar-menu{
+        gap: 0 !important;
+        
+    }
+    .navbar-menu a{
+        margin: 0 5px;
+        width: 40px;
+    }
+}
+</style>
