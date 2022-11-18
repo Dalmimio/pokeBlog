@@ -3,8 +3,8 @@
 </script>
 
 <template>
-    <header>
-        <nav class="d-flex w-100 justify-content-between">
+    <header class="d-flex justify-content-center">
+        <nav class="d-flex w-100 justify-content-between align-items-center">
         <h1 class="navbar-logo">PB</h1>
         <div class="d-flex gap-3 align-items-center nav navbar-menu">
             <RouterLink to="/">
@@ -37,14 +37,16 @@
             <h5 class="offcanvas-title" id="offcanvasRightLabel">PokeBlog</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body d-flex flex-column gap-2">
-            <RouterLink to="/about"><font-awesome-icon icon="fa-solid fa-users" /> About us</RouterLink>
-            <RouterLink to="/contact"> <font-awesome-icon icon="fa-solid fa-id-badge" /> Contact us</RouterLink>
-            <RouterLink to="/workwithus"><font-awesome-icon icon="fa-solid fa-briefcase" /> Work with us</RouterLink>
-            <RouterLink to="/terms"><font-awesome-icon icon="fa-solid fa-pen-ruler" /> Terms and conditions</RouterLink>
+        <div class="offcanvas-body d-flex flex-column gap-2 ">
+            <RouterLink to="/" class=""><font-awesome-icon icon="fa-solid fa-house-chimney" /><span>Home</span></RouterLink>
+            <RouterLink to="/profile"><font-awesome-icon icon="fa-solid fa-user" /><span>Profile</span></RouterLink>
+            <RouterLink to="/news"><font-awesome-icon icon="fa-solid fa-newspaper" /><span>News</span></RouterLink>
+            <RouterLink to="/save"><font-awesome-icon icon="fa-solid fa-bookmark" /><span>Saved</span></RouterLink>
+            <RouterLink to="/about"><font-awesome-icon icon="fa-regular fa-face-smile" /><span>About us</span></RouterLink>
+            <RouterLink to="/contact"> <font-awesome-icon icon="fa-solid fa-id-badge" /><span>Contact us</span></RouterLink>
+            <RouterLink to="/workwithus"><font-awesome-icon icon="fa-solid fa-briefcase" /><span>Work with us</span></RouterLink>
+            <RouterLink to="/terms"><font-awesome-icon icon="fa-solid fa-pen-ruler" /><span>Terms and conditions</span></RouterLink>
             <RouterLink to="/login" class="btn btn-more">Login</RouterLink>
-
-
         </div>
         </div>
     </nav>
@@ -81,7 +83,7 @@ nav img{
 nav .nav a{
     color: var(--color-text-ligth);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     display: flex;
 }
 nav .nav a span{
@@ -123,25 +125,28 @@ nav .nav a span{
 }
 .offcanvas{
     background-color: var(--color-primary);
-    height: 60%;
-    width: 250px !important;
-    top: 51px !important;
-    border-radius: 1rem 0rem 0rem 1rem;
+    border-radius: 0rem 0rem 0rem 1rem;
+        
 }
 .offcanvas a{
     color: var(--color-text-ligth);
     text-decoration: none;
-    font-size: 1rem;
-        
+    font-size: 1.4rem;
+    margin: 2px;
+
 }
+.offcanvas-body span{
+    margin-left: 10px;
+    font-size: 1.4rem;
+}
+
+
 .offcanvas-title, nav h1{
     color: yellow;
     -webkit-text-stroke: blue 1.5px;
     font-size: 2rem;
 }
-.offcanvas svg{
-    margin-right: .5rem;
-}
+
 
 
 @media only screen and (min-width: 700px){
@@ -164,19 +169,22 @@ nav .nav a span{
     }
 }
 @media screen and (max-width: 599px){
-    .navbar{
-        padding: 0 .5rem;
-    }
+    
     .navbar-menu{
         gap: 0 !important;
         
+        
+    }
+    .offcanvas{
+        width: 70% !important;
+        height: 80%;
     }
     .navbar-menu a{
-        margin: 0 5px;
+        margin: 0 12px;
         width: 40px;
     }
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 360px){
     .navbar{
         padding: 0 .5rem;
     }

@@ -9,13 +9,15 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons solid */
-import { faHouseChimney, faUser,faNewspaper, faBookmark, faBars,faUsers,faBriefcase, faIdBadge, faPenRuler, faAt, faKey,faGear} from '@fortawesome/free-solid-svg-icons'
+import { faHouseChimney, faUser,faNewspaper, faBookmark, faBars,faBriefcase, faIdBadge, faPenRuler, faAt, faKey,faGear,faMagnifyingGlass,faXmark} from '@fortawesome/free-solid-svg-icons'
 
 /* import specific icons regular */
-import {faCircleUser,faMessage} from '@fortawesome/free-regular-svg-icons'
+import {faCircleUser,faMessage,faFaceSmile,faPenToSquare} from '@fortawesome/free-regular-svg-icons'
 
 /* add icons to the library */
-library.add(faHouseChimney, faUser,faNewspaper, faBookmark, faBars,faUsers, faBriefcase, faIdBadge, faPenRuler,faCircleUser, faAt,faMessage, faKey,faGear)
+library.add(faHouseChimney, faUser,faNewspaper, faBookmark, faBars,faFaceSmile, faBriefcase, faIdBadge, faPenRuler,faCircleUser, faAt,faMessage, faKey,faGear,faMagnifyingGlass,faPenToSquare,faXmark)
+
+// fa-pen-to-square
 
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 import 'bootstrap/dist/css/bootstrap.min.css'

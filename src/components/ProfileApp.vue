@@ -22,7 +22,7 @@
 
 <style scoped>
 .header{
-
+    margin: 1rem 0;
     width: 90%;
     padding-bottom: 1.5rem;
 }

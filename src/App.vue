@@ -10,9 +10,4 @@ import HeaderApp from './components/HeaderApp.vue'
 </template>
 
 <style scoped>
-
-
-
-
-
 </style>

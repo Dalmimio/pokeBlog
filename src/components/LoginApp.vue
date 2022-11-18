@@ -30,11 +30,19 @@
                 Log in
             </button>
         </form>
-      <div class="d-flex align-items-center gap-3 justify-content-center">
-        <p>
+
+        
+      <div class="d-flex align-items-center justify-content-center flex-column footer mt-5">
+        <div class="d-flex align-items-center gap-3">
+            <p>Forgot password?</p>
+        <RouterLink to="/register"> Click Here</RouterLink>
+    </div>
+        <div class="d-flex align-items-center gap-3">
+            <p>
             Haven't registered?
         </p>
         <RouterLink to="/register">Sign up here</RouterLink>
+        </div>
       </div>
     </main>
 </template>
@@ -123,6 +131,9 @@
     }
     p{
         margin: 2rem 0rem;
+    }
+    .footer p{
+       margin: 5px 0;
     }
 
 </style>
