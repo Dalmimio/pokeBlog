@@ -5,7 +5,7 @@
 <template>
     <header class="d-flex justify-content-center">
         <nav class="d-flex w-100 justify-content-between align-items-center">
-        <h1 class="navbar-logo">PB</h1>
+        <h1 class="navbar-logo">PokeBlog</h1>
         <div class="d-flex gap-3 align-items-center nav navbar-menu">
             <RouterLink to="/">
                 <font-awesome-icon icon="fa-solid fa-house-chimney" />
@@ -26,7 +26,6 @@
             <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <font-awesome-icon icon="fa-solid fa-bars" />
             </a>
-            
             
         
         </div>
@@ -60,7 +59,7 @@
 
 
 <style scoped>
-    
+    @import url('../assets/main.css');
 header{
     background-color: var(--color-primary);
     min-height: 10vh;
@@ -149,31 +148,27 @@ nav .nav a span{
 
 
 
-@media only screen and (min-width: 700px){
-    .navbar-logo-text{
-        display: none;
-        height: 19px;
-        display: flex;
-    }
 
-}
-@media only screen and (min-width: 600px){
-    .navbar-menu{
-        flex: 1 1 auto;
-        justify-content: center;
-        margin-right: 120px;
+@media screen and (max-width: 760px){
+    
+    .navbar-logo{
+        display: none;
     }
-    .navbar-menu > a:last-child{
-        position: absolute;
-        right: 20px;
+    
+    .navbar-menu{
+        font-size: 1.5rem;
+        width: 100%;
+        justify-content: space-evenly;
+
     }
 }
 @media screen and (max-width: 599px){
-    
+    .navbar-logo{
+        display: none;
+    }
     .navbar-menu{
         gap: 0 !important;
-        
-        
+        flex: 1 1 auto;
     }
     .offcanvas{
         width: 70% !important;
@@ -183,7 +178,9 @@ nav .nav a span{
         margin: 0 12px;
         width: 40px;
     }
+    
 }
+
 @media screen and (max-width: 360px){
     .navbar{
         padding: 0 .5rem;
@@ -197,4 +194,5 @@ nav .nav a span{
         width: 40px;
     }
 }
+
 </style>

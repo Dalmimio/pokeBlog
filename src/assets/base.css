@@ -7,3 +7,41 @@
   --color-text-ligth : #EEEEEE;
   --color-text-dark : #252525;
 }
+
+@media screen and (min-width: 768px) {
+  header {
+    width: 20% !important;
+    height: 100%;
+  }
+
+  nav {
+    flex-direction: column;
+    justify-content: space-evenly !important;
+    padding: 2rem 0 !important;
+  }
+  
+  .navbar-logo {
+    display: inline !important;
+  }
+
+  .navbar-menu {
+    flex-direction: column !important;
+    margin: 0 !important;
+    align-items: flex-start !important;
+    height: 70%;
+    justify-content: space-between;
+  }
+  .navbar-logo-text{
+    display: inline !important;
+    height: 19px;
+    display: flex;
+}
+
+
+  main {
+    width: 80%;
+    margin-left: 20%;
+  }
+
+}
+

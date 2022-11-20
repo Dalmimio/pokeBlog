@@ -7,7 +7,7 @@
             <img src="https://github.com/Dalmimio/Img-blog/blob/main/perfil.jpg?raw=true" alt="profile-icon">
             <div class="text-start align-self-center">
                 <h3>Gunter</h3>
-                <h5 class="username">@ SoyGunter69</h5>
+                <p class="username">@ SoyGunter69</p>
             </div>
             <RouterLink to="/settings">
                 <font-awesome-icon icon="fa-solid fa-gear" />
