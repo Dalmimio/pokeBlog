@@ -20,8 +20,8 @@
                 <span class="navbar-logo-text">News</span>
             </RouterLink>
             <RouterLink to="/save">
-                <font-awesome-icon icon="fa-solid fa-bookmark" />
-                <span class="navbar-logo-text">Saved</span>
+                <font-awesome-icon icon="fa-solid fa-heart" />
+                <span class="navbar-logo-text">Beloved</span>
             </RouterLink>
             <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <font-awesome-icon icon="fa-solid fa-bars" />
@@ -40,7 +40,7 @@
             <RouterLink to="/" class=""><font-awesome-icon icon="fa-solid fa-house-chimney" /><span>Home</span></RouterLink>
             <RouterLink to="/profile"><font-awesome-icon icon="fa-solid fa-user" /><span>Profile</span></RouterLink>
             <RouterLink to="/news"><font-awesome-icon icon="fa-solid fa-newspaper" /><span>News</span></RouterLink>
-            <RouterLink to="/save"><font-awesome-icon icon="fa-solid fa-bookmark" /><span>Saved</span></RouterLink>
+            <RouterLink to="/save"><font-awesome-icon icon="fa-solid fa-heart" /><span>Beloved</span></RouterLink>
             <RouterLink to="/about"><font-awesome-icon icon="fa-regular fa-face-smile" /><span>About us</span></RouterLink>
             <RouterLink to="/contact"> <font-awesome-icon icon="fa-solid fa-id-badge" /><span>Contact us</span></RouterLink>
             <RouterLink to="/workwithus"><font-awesome-icon icon="fa-solid fa-briefcase" /><span>Work with us</span></RouterLink>
@@ -61,7 +61,7 @@
 <style scoped>
     @import url('../assets/main.css');
 header{
-    background-color: var(--color-primary);
+    border-right: var(--color-primary) solid 1px;
     min-height: 10vh;
     width: 100%;
     position: fixed;
