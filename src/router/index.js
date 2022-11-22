@@ -53,6 +53,11 @@ const router = createRouter({
       path: '/news',
       name: 'news',
       component: () => import('../views/NewsView.vue')
+    },
+    {
+      path: '/save',
+      name: 'save',
+      component: () => import('../views/SaveView.vue')
     }
   ]
 })

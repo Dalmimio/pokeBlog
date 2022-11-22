@@ -1,15 +1,24 @@
-<script septup>
-import Modal from './Modal.vue';
-export default {
-  components: {
-    Modal
-  },
-  data() {
-    return {
-      showModal: false
-    }
-  }
-}
+<script setup>  
+     
+
+    import { ref, onMounted} from 'vue'
+    import PosteosApp from './PosteosApp.vue'
+    import Modal from './Modal.vue';
+    
+    
+    const posteos = ref([])
+    onMounted(async () => {
+         await fetch('https://jsonplaceholder.typicode.com/posts')
+         .then(res => res.json())
+         .then(data => {
+                posteos.value= data
+                console.log(posteos.value);
+                
+            })
+         })
+         
+ 
+    
 </script>
 
 <template>
@@ -19,28 +28,27 @@ export default {
             <input type="search" name="" id="search">
             <div>
 
-                <button id="show-modal" @click="showModal = true" class="btn btn-more">New post <font-awesome-icon icon="fa-regular fa-pen-to-square" /></button>
+                <button class="btn btn-more">New post <font-awesome-icon icon="fa-regular fa-pen-to-square" /></button>
             </div>
     
         </div>
         <div>
             <h1>News App</h1>
         </div>
+        <div class="post-container d-flex gap-2 flex-wrap justify-content-center">
+           
+            <PosteosApp v-for="post in posteos" :post="post" :key="post.id" />
+        </div>
     
-    
-        <Teleport to="body">
-            <!-- use the modal component, pass in the prop -->
-            <modal :show="showModal" @close="showModal = false">
-                
-            </modal>
-        </Teleport>
-    </main>
+        
+
+     </main>
 </template>
 
 <style scoped>
 #search{
-        width:300px;
-        height: 50px;
+        width:clamp(250px, 50vw, 600px) !important;
+        height: clamp(30px, 40px, 50px);
         border: 1px solid #ccc;
         border-radius: 20px;
         padding: 0 10px;

@@ -1,9 +1,6 @@
 <script>
-export default {
-  props: {
-    show: Boolean
-  }
-}
+  
+    
 </script>
 
 <template>
@@ -26,18 +23,19 @@ export default {
                 <input type="file" id="filepost">
               </div>
 
-              <div class="d-flex justify-content-center">
+              <div class="d-flex justify-content-center flex-wrap rules">
                 <p>Your post must comply with the </p>
-              <RouterLink to="/terms">rules</RouterLink>
+              <RouterLink to="/terms" class="">rules</RouterLink>
               </div>
 
-              <button type="submit" class="btn btn-more post" @click="$emit('close')">Post</button>
+              
             </div>
           </div>
 
-          <div class="modal-footer">
+          <div class="modal-footer d-flex justify-content-around">
             
-            <button type="submit" class="btn btn-x" @click="$emit('close')">
+            <button type="submit" class="btn btn-more post" @click="$emit('close')">Post</button>
+            <button type="submit" class="btn-x" @click="$emit('close')">
               <font-awesome-icon icon="fa-solid fa-xmark" />
             </button>
           </div>
@@ -66,7 +64,7 @@ export default {
 }
 
 .modal-container {
-  width: 80%;
+  width: clamp(280px, 70%, 600px);
   height: 80%;
   margin: 0px auto;
   padding: 20px 20px;
@@ -75,7 +73,7 @@ export default {
   transition: all 0.3s ease;
 }
 .modal-header{  
-  height: 10%;
+  height: 8%;
   margin-bottom: 5px;
 }
 .modal-header h3 {
@@ -89,7 +87,8 @@ export default {
 }
 .modal-body textarea{
   padding: 5px;
-  height: 50%;
+  height: 40%;
+  width: 100%;
   border: none;
   background: #fafafa15;
   color: white;
@@ -98,12 +97,15 @@ export default {
 }
 .div-input{
   width: 100%;
-  height: 50%;
+  height: 40%;
   background: #fafafa15;
   border-radius: 10px;
 }
+.rules p{
+  margin: 0;
+}
 .post{
-  width: 8rem !important;
+  width: 7rem !important;
 }
 .div-input p{
   text-align: center;
@@ -125,18 +127,15 @@ export default {
 }
 
 .modal-footer{
-  height: 10%;
+  height: 12%;
 }
 .btn-x{
         background: transparent;
         border: none;
         color: var(--color-text-ligth);
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
-.modal-default-button {
-  float: right;
-}
 
 /*
  * The following styles are auto-applied to elements with

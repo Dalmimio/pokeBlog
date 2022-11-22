@@ -1,5 +1,6 @@
 <script setup>
     import NewsApp from '../components/NewsApp.vue'
+    
 </script>
 
 <template>
