@@ -21,7 +21,7 @@
             </RouterLink>
             <RouterLink to="/save">
                 <font-awesome-icon icon="fa-solid fa-heart" />
-                <span class="navbar-logo-text">Beloved</span>
+                <span class="navbar-logo-text">Loves</span>
             </RouterLink>
             <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <font-awesome-icon icon="fa-solid fa-bars" />
@@ -40,7 +40,7 @@
             <RouterLink to="/" class=""><font-awesome-icon icon="fa-solid fa-house-chimney" /><span>Home</span></RouterLink>
             <RouterLink to="/profile"><font-awesome-icon icon="fa-solid fa-user" /><span>Profile</span></RouterLink>
             <RouterLink to="/news"><font-awesome-icon icon="fa-solid fa-newspaper" /><span>News</span></RouterLink>
-            <RouterLink to="/save"><font-awesome-icon icon="fa-solid fa-heart" /><span>Beloved</span></RouterLink>
+            <RouterLink to="/save"><font-awesome-icon icon="fa-solid fa-heart" /><span>Loves</span></RouterLink>
             <RouterLink to="/about"><font-awesome-icon icon="fa-regular fa-face-smile" /><span>About us</span></RouterLink>
             <RouterLink to="/contact"> <font-awesome-icon icon="fa-solid fa-id-badge" /><span>Contact us</span></RouterLink>
             <RouterLink to="/workwithus"><font-awesome-icon icon="fa-solid fa-briefcase" /><span>Work with us</span></RouterLink>
@@ -161,6 +161,13 @@ nav .nav a span{
         justify-content: space-evenly;
 
     }
+    nav{
+        border-left: none;
+    }
+    header{
+    border-right: none;
+    background-color: var(--color-primary);
+}
 }
 @media screen and (max-width: 599px){
     .navbar-logo{
