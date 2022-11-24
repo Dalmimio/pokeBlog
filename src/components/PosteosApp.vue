@@ -5,9 +5,9 @@ const props = defineProps({
 })
 
 const guardarPost = (id) => {
-    console.log(arrayP);
-    if (post.id === id) {
-        post.save = !post.save
+    
+    if (props.post.id === id) {
+        props.post.save = !props.post.save
     }
     // const index = arrayP.value.findIndex(post => post.id === id)
     // console.log(index);
