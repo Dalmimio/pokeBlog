@@ -3,9 +3,12 @@
 </script>
 
 <template>
-    <main>
-        <h1>Contact</h1>
-        <p>Send us a message!</p>
+    <main class="d-flex flex-column align-items-center gap-3 justify-content-center">
+
+        <div class="d-flex flex-column div-header align-items-center justify-content-center gap-3">
+            <h1>Contact</h1>
+        <p>Feel free to contact us. We are always open to discuss new projects, creative ideas or collaborative opportunities.</p>
+        </div>
 
         <form action="">
             <div class="textbox">
@@ -38,6 +41,22 @@
 </template>
 
 <style scoped>
+    .div-header{
+        width: 90%;
+    }
+    
+    button{
+        width: 10rem;
+    }
+    form{
+        width: 90% !important;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
     button, input{
         border: 0;
         height: 60px;
@@ -47,18 +66,8 @@
     input{        
         width: 100%;
     }
-    button{
-        width: 10rem;
-    }
-    form{
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 16px;
-    }
-    .textbox{
+    .textbox{ 
+        width: 90%;
         position: relative;
         margin-bottom: 16px;
     }
@@ -72,6 +81,7 @@
         color: rgb(255 255 255/40%)
     }
     .textbox input{
+        width: 100%;
         padding: 0 24px 0 36px;
         border-bottom: 2px solid var(--color-primary);
         height: 72px;        
@@ -113,6 +123,6 @@
         font-weight: 600;
     }
     img{
-        width: 90%;
+        width: 290px;
     }
 </style>

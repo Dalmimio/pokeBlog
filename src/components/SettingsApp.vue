@@ -5,17 +5,17 @@
  -->
 
 <template>
-    <main>
+    <main class="d-flex flex-column align-items-center">
         <h2>General account settings</h2>
 
-        <div class="header d-flex justify-content-center align-items-center gap-3">
+        <div class="header d-flex mt-3 justify-content-center align-items-center gap-3">
             <img src="https://github.com/Dalmimio/Img-blog/blob/main/perfil.jpg?raw=true" alt="profile-icon">
             <div class="file">
                 <label for="profileph">Choose photo</label>
                 <input type="file" id="profileph">
             </div>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 w-75">
             <h3>Personal information</h3>
             <div class="form-group">
                 <label for="name">Name</label>

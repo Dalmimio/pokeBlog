@@ -46,6 +46,9 @@
 </template>
 
 <style scoped>
+.post-container{
+    width: 95%;
+}
 #search{
         width:clamp(250px, 50vw, 600px) !important;
         height: clamp(30px, 40px, 50px);

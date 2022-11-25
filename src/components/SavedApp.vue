@@ -38,13 +38,18 @@ const subirPost = () => {
         </form>
         <!-- <button  @click="showModal = true" class="btn btn-more mt-2">Post </button> -->
     
-        <div v-if="posteosSaved.length!=0" class="post-container d-flex gap-2 flex-wrap justify-content-center mt-3">
+        <div v-if="posteosSaved.length!=0" class="contenedor d-flex gap-2 flex-wrap align-items-center justify-content-center mt-3">
     
             <PosteosApp  v-for="post in posteosSaved" :post="post" :key="post.id" :arrayP="post" />
     
         </div>
-        <div v-else>
-            <p>Aun no guardaste nada</p>
+
+        <div v-else class="nothing d-flex flex-column gap-2 mt-4">
+            <p class="fw-bold">Aun no guardaste nada</p>
+
+            <img src="https://github.com/Dalmimio/Img-blog/blob/main/psicoduck.png?raw=true" 
+            alt="no has guardado nada">
+           
 
         </div>
     </main>
@@ -52,16 +57,24 @@ const subirPost = () => {
 
 <style scoped>
 form{
-    width:90%;
+    width: 100%;
 }
-
-.post-creat textarea{
- width: 60%;
+.contenedor{
+    width: 95%;
+}
+textarea{
+ width: clamp(260px, 80%, 600px) !important;
  background: rgba(255, 255, 255, 0.205);
  border: none;
  border-radius: .5rem;
  color: #FEFEFE;
- height: 40%;
+ height: auto;
  padding: 1rem;
+}
+.nothing{
+    width: 280px;
+}
+.nothing img{
+    width: 100%;
 }
 </style>

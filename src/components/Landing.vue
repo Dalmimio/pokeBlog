@@ -56,7 +56,7 @@
 
 <style scoped>
   .logo{
-    width: clamp(200px, 50%, 400px);
+    width: clamp(280px, 50%, 400px);
   }
   main div .moreinfo p,  main .header-main p{
     margin-top: 2rem;
@@ -71,7 +71,7 @@
     background-color: var(--color-background-green);
     color: var(--color-text-ligth);
     text-align: center;
-    width: clamp(255px, 30%, 600px);
+    width: clamp(290px, 30%, 600px);
     margin: .5rem;
     height: 5rem;
     padding: .5rem 2rem;
@@ -92,7 +92,7 @@
   .recomended article{
     color: var(--color-text-ligth);
     text-align: center;
-    width: clamp(255px, 40%, 600px);
+    width: clamp(290px, 40%, 600px);
     margin: .5rem;
     padding: .5rem;
     display: flex;

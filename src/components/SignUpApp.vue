@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <main>
+    <main class="d-flex flex-column align-items-center">
         <h1>Sign Up</h1>
         <form action="">
             
@@ -56,6 +56,7 @@
         padding: 10px 20px !important;
     }
     form{
+        width: 90% !important;
         margin: 0;
         display: flex;
         flex-direction: column;
@@ -64,6 +65,7 @@
         gap: 16px;
     }
     .textbox{
+        width: 90%;
         position: relative;
         margin-bottom: 16px;
     }
@@ -81,6 +83,7 @@
         text-decoration: none;
     }
     .textbox input{
+        width: 100%;
         padding: 0 24px 0 36px;
         border-bottom: 2px solid var(--color-primary);
         height: 72px;        

@@ -9,6 +9,7 @@
         <div class="d-flex gap-3 align-items-center nav navbar-menu">
             <RouterLink to="/">
                 <font-awesome-icon icon="fa-solid fa-house-chimney" />
+                
                 <span class="navbar-logo-text">Home</span>
             </RouterLink>
             <RouterLink to="/profile">

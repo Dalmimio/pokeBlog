@@ -38,12 +38,21 @@ const guardarPost = (id) => {
         background-color: rgba(112, 112, 112, 0.13);
         border: 5px;
         width: clamp(300px, 25rem, 600px) !important;
-        height: auto;
+        height:clamp(8rem, 12rem, 16rem) !important;
         color: white;
         
     }
     .posteo .card-body{
         overflow-y: scroll;
+    }
+
+    .card-body::-webkit-scrollbar{
+        width: 5px;
+        background-color: transparent;
+    }
+    .card-body::-webkit-scrollbar-thumb{
+        background: var(--color-primary);
+        border-radius: 5px;
     }
     .icon-fav-y{
         color: red;
