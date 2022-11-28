@@ -32,7 +32,7 @@ const subirPost = () => {
     <main class="d-flex flex-column align-items-center">
         <form @submit.prevent="subirPost">
             <div class="post-creat d-flex flex-column gap-2 mt-3 align-items-center">
-                <textarea v-model="textoPost" placeholder="Escribi algo a ver" name="" id="" cols="30" rows="5"></textarea>
+                <textarea v-model="textoPost" placeholder="Escribi algo a ver" name="" id="" cols="30" rows="2"></textarea>
             </div>
             <button :disabled="!textoPost" type="submit" class="btn btn-more mt-2">Post</button>
         </form>

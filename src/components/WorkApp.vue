@@ -19,7 +19,7 @@
         <div>
             <h3>Join the team</h3>
         <p>If you want to share your knowledge about pokemons and their care, we invite you to be part of the team.</p>
-        <RouterLink to="/register" class="btn-more btn">
+        <RouterLink to="/formWork" class="btn-more btn">
             Apply
         </RouterLink>
         </div>

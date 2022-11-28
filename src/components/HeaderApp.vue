@@ -6,7 +6,14 @@
     <header class="d-flex justify-content-center">
         <nav class="d-flex w-100 justify-content-between align-items-center">
         <h1 class="navbar-logo">PokeBlog</h1>
-        <div class="d-flex gap-3 align-items-center nav navbar-menu">
+        <div class="nav-s d-flex gap-3 align-items-center nav navbar-menu">
+            <RouterLink to="/about"><font-awesome-icon icon="fa-regular fa-face-smile" /></RouterLink>
+            <img src="../assets/logoCompleto.png" alt="">
+            <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <font-awesome-icon icon="fa-solid fa-bars" />
+            </a>        
+        </div>
+        <div class="nav-lx d-flex gap-3 align-items-center nav navbar-menu justify-content-evenly  p-1">
             <RouterLink to="/">
                 <font-awesome-icon icon="fa-solid fa-house-chimney" />
                 
@@ -24,9 +31,7 @@
                 <font-awesome-icon icon="fa-solid fa-heart" />
                 <span class="navbar-logo-text">Loves</span>
             </RouterLink>
-            <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                <font-awesome-icon icon="fa-solid fa-bars" />
-            </a>
+            
             
         
         </div>
@@ -49,7 +54,7 @@
             <RouterLink to="/login" class="btn btn-more">Login</RouterLink>
         </div>
         </div>
-    </nav>
+        </nav>
     </header>
 
     
@@ -61,6 +66,7 @@
 
 <style scoped>
     @import url('../assets/main.css');
+    
 header{
     border-right: var(--color-primary) solid 1px;
     min-height: 10vh;
@@ -83,7 +89,7 @@ nav img{
 nav .nav a{
     color: var(--color-text-ligth);
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     display: flex;
 }
 nav .nav a span{
@@ -104,6 +110,9 @@ nav .nav a span{
     width: auto;
     opacity: .8;
     transition: .5s;
+}
+.navbar-menu img{
+    width: 50%;
 }
 
 
@@ -150,7 +159,10 @@ nav .nav a span{
 
 
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 766px){
+    .nav-lx{
+    display: none !important;
+    }
     
     .navbar-logo{
         display: none;

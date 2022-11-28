@@ -15,13 +15,21 @@
   }
   main {
     width: 60%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto !important;
   }
   header,footer {
     width: 20% !important;
     height: 100%;
   }
+  .nav-lx{
+    visibility: visible !important;
+}
+  .nav-s{
+    display: none !important;
 
+  }
   nav {
     flex-direction: column;
     justify-content: space-evenly !important;
@@ -50,7 +58,12 @@ footer{
     background-color: aqua;
     position: fixed;
 }
-
+.foo-lx{
+  visibility: visible !important;
+}
+.foo-s{
+  display: none !important;
+}
   
 
 }

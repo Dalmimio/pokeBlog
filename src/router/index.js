@@ -58,6 +58,11 @@ const router = createRouter({
       path: '/save',
       name: 'save',
       component: () => import('../views/SaveView.vue')
+    },
+    {
+      path: '/formWork',
+      name: 'formWork',
+      component: () => import('../views/FormWorkView.vue')
     }
   ]
 })

@@ -26,6 +26,9 @@
 </template>
 
 <style scoped>
+    main{
+        margin-bottom: 5rem;
+    }
     article{
         width: 90%;
         text-align: start;
@@ -33,5 +36,6 @@
     }
     img{
         width: 90%;
+        border-radius: 1rem;
     }
 </style>
