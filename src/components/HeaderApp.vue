@@ -14,7 +14,7 @@
             </a>        
         </div>
         <div class="nav-lx d-flex gap-3 align-items-center nav navbar-menu justify-content-evenly  p-1">
-            <RouterLink to="/">
+            <RouterLink to="/" class="active">
                 <font-awesome-icon icon="fa-solid fa-house-chimney" />
                 
                 <span class="navbar-logo-text">Home</span>
@@ -38,9 +38,8 @@
         
         <!-- Off canvas -->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">PokeBlog</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header d-flex justify-content-end">
+           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column gap-2 ">
             <RouterLink to="/" class=""><font-awesome-icon icon="fa-solid fa-house-chimney" /><span>Home</span></RouterLink>
@@ -86,6 +85,8 @@ nav img{
     width: 40px;
     height: 60px;
 }
+
+
 nav .nav a{
     color: var(--color-text-ligth);
     text-decoration: none;
