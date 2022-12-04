@@ -12,7 +12,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons solid */
-import { faHouseChimney, faUser,faNewspaper, faBookmark, faBars,faBriefcase, faIdBadge, faPenRuler, faAt, faKey,faGear,faMagnifyingGlass,faXmark,faHeart, faComment, faCakeCandles} from '@fortawesome/free-solid-svg-icons'
+import { faHouseChimney, faUser,faNewspaper, faBookmark, faBars,faBriefcase, faIdBadge, faPenRuler, faAt, faKey,faGear,faMagnifyingGlass,faXmark,faHeart, faComment, faCakeCandles, faTrashCan} from '@fortawesome/free-solid-svg-icons'
 
 
 /* import specific icons regular */
@@ -25,12 +25,12 @@ import {faInstagram, faFacebook, faWhatsapp, faLinkedinIn, faGithub} from '@fort
 
 
 /* add icons to the library */
-library.add(faHouseChimney, faUser,faNewspaper, faBookmark, faBars,faFaceSmile, faBriefcase, faIdBadge, faPenRuler,faCircleUser, faAt,faMessage, faKey,faGear,faMagnifyingGlass,faPenToSquare,faXmark,faHeart,faComment, faInstagram, faFacebook, faWhatsapp, faCakeCandles, faLinkedinIn, faGithub)
+library.add(faHouseChimney, faUser,faNewspaper, faBookmark, faBars,faFaceSmile, faBriefcase, faIdBadge, faPenRuler,faCircleUser, faAt,faMessage, faKey,faGear,faMagnifyingGlass,faPenToSquare,faXmark,faHeart,faComment, faInstagram, faFacebook, faWhatsapp, faCakeCandles, faLinkedinIn, faGithub, faTrashCan)
 
 
 
 
-// fa-cake-candles
+// <font-awesome-icon icon="fa-solid fa-trash-can" />
 
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 import 'bootstrap/dist/css/bootstrap.min.css'

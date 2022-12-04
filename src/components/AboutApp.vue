@@ -26,9 +26,7 @@
 </template>
 
 <style scoped>
-    main{
-        margin-bottom: 5rem;
-    }
+    
     article{
         width: 90%;
         text-align: start;
