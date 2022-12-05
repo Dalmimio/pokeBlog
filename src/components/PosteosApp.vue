@@ -1,19 +1,31 @@
 <script setup>
 import CommentsApp from './CommentsApp.vue';
+import {ref} from 'vue'
+
 const props = defineProps({
     post: {},
     arrayP: {}
 })
+
+const textoComment = ref('')
+const comentarios = ref([
+
+])
+const agregarComent = () => {
+    const comment = {
+        id: crypto.randomUUID(),
+        body: textoComment.value
+    }
+    comentarios.value.unshift(comment)
+    textoComment.value = ''
+    console.log(comment);
+}
 
 const guardarPost = (id) => {
     
     if (props.post.id === id) {
         props.post.save = !props.post.save
     }
-    // const index = arrayP.value.findIndex(post => post.id === id)
-    // console.log(index);
-    // console.log(arrayP.value[index]);
-    // arrayP.value[index].save = !arrayP.value[index].save
 }
 </script>
 
@@ -45,13 +57,19 @@ const guardarPost = (id) => {
                 
             </div>
             
-            <input type="text" maxlength="15">
+            <div class="d-flex gap-2 agregar">
+                <input v-model="textoComment" type="text">
+                <button class="btn btn-comment" :disabled="!textoComment" @click="agregarComent">
+                    Enviar <font-awesome-icon icon="fa-regular fa-pen-to-square" />
+                </button>
+            </div>
+            
         </div>
         <div class="comentarios-container d-flex justify-content-center p-1">
             <div class="linea "></div>
 
-            <div class="d-flex flex-column gap-2 align-items-end mt-3">
-                <CommentsApp />
+            <div class="d-flex flex-column gap-2 align-items-end mt-3 contenedor-comments">
+                <CommentsApp v-for="comment in comentarios" :comment="comment" :key="comment.id"/>
             </div>
         </div>
 
@@ -123,7 +141,7 @@ const guardarPost = (id) => {
         background: transparent;
     }
     .card-footer input{
-        width: 100%;
+        width: 70%;
         border: none;
         border-radius: .3rem;
         background: rgba(255, 255, 255, 0.185);
@@ -137,6 +155,18 @@ const guardarPost = (id) => {
         width: 3px;
         background-color: var(--color-primary);
         height: auto;
+    }
+    .contenedor-comments{
+        width: 90%;
+    }
+    .btn-comment{
+        background-color: var(--color-primary);
+        color: var(--text-light);
+        width: auto;
+        font-size: 1rem;
+    }
+    .agregar{
+        
     }
 
     

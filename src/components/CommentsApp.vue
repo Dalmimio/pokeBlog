@@ -1,23 +1,26 @@
 <script setup>
+const props = defineProps({
+    comment: {}
+})
 </script>
 
 <template> 
-    <div class="d-flex w-100">
+    <div class="d-flex contenedor">
         <div class="lineH"></div>
         <div class="comment d-flex justify-content-center">
-            <p>Hola soy un comentario pedorro, ese pokemon no me gusta nada ewe</p>
+            <p>{{comment.body}}</p>
         </div>
-    </div>
-    <div class="d-flex w-100">
-        <div class="lineH"></div>
-        <div class="comment d-flex justify-content-center">
-            <p>Hola soy un comentario pedorro, ese pokemon no me gusta nada ewe</p>
-        </div>
-    </div>
-    
+    </div>    
 </template>
 
 <style scoped>
+.contenedor {
+    width: 100%;
+}
+p{
+    text-align: start;
+    width: 100%;
+}
 .comment{
     padding: .2rem;
     width: 90%;

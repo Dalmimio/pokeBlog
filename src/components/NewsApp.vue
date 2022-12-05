@@ -1,11 +1,26 @@
 <script setup>  
      
-     import {ref, onMounted } from 'vue'
+    import {ref, onMounted } from 'vue'
     import PosteosApp from './PosteosApp.vue'
     // import Modal from './Modal.vue';
     
     const textoPost = ref('')
-    const posteosSaved = ref([])
+
+    const posteosSaved = ref([
+        {
+            id: 1,
+            body: 'Hola, soy un posteo de prueba, mi posiion es, quetimporta'
+        },
+        {
+            id: 2,
+            body: 'Hola, soy otro posteo, se supone que debo hablar de pokemon, no? Diganme por favor que se me acaban los caracteres :C solo dan 150 ni que fue fuesen m'
+        },
+        {
+            id: 3,
+            body: 'Amarrete, danos mas caracteres'
+        }
+    ])
+    
 
 
 
