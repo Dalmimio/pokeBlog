@@ -57,20 +57,23 @@ const guardarPost = (id) => {
                 
             </div>
             
-            <div class="d-flex gap-2 agregar">
+            <div class="d-flex gap-2">
                 <input v-model="textoComment" type="text">
                 <button class="btn btn-comment" :disabled="!textoComment" @click="agregarComent">
-                    Enviar <font-awesome-icon icon="fa-regular fa-pen-to-square" />
+                    Post
                 </button>
             </div>
             
         </div>
-        <div class="comentarios-container d-flex justify-content-center p-1">
+        <div v-if="comentarios.length" class="comentarios-container d-flex justify-content-center p-1">
             <div class="linea "></div>
 
             <div class="d-flex flex-column gap-2 align-items-end mt-3 contenedor-comments">
                 <CommentsApp v-for="comment in comentarios" :comment="comment" :key="comment.id"/>
             </div>
+        </div>
+        <div v-else>
+            <p class="text-center">No comments yet</p>
         </div>
 
     </div>
@@ -141,7 +144,7 @@ const guardarPost = (id) => {
         background: transparent;
     }
     .card-footer input{
-        width: 70%;
+        width: 80%;
         border: none;
         border-radius: .3rem;
         background: rgba(255, 255, 255, 0.185);
@@ -165,9 +168,7 @@ const guardarPost = (id) => {
         width: auto;
         font-size: 1rem;
     }
-    .agregar{
-        
-    }
+    
 
     
 </style>
