@@ -1,4 +1,6 @@
 <script setup>
+
+    import { loginWithGoogle} from '../firebase/auth.js'
 </script>
 
 <template>
@@ -26,6 +28,9 @@
             </span>
             </div>
             
+            <button type="submit" @click="loginWithGoogle">
+                Log in
+            </button>
             <button type="submit">
                 Log in
             </button>
