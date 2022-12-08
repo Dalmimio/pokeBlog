@@ -53,7 +53,11 @@ import TwPosteos from './twPosteos.vue';
 
       
   </div>
- 
+
+  <div class="pokedex">
+    <a href="https://pokedex-pokeblog.netlify.app/" target="_blank" ><img src="https://github.com/Dalmimio/Img-blog/blob/main/pokedex.png?raw=true" alt=""></a>
+  </div>
+
   <TwPosteos />
 
  </main>
@@ -109,6 +113,12 @@ import TwPosteos from './twPosteos.vue';
     width: 90%;
     margin-bottom: 1rem;
   }
+ .pokedex{
+  width: 280px;
+ }
+ .pokedex img{
+  width: 100% !important;
+ }
   @media screen and (max-width: 818px){
     .recomended .centro1{
     padding-bottom: 1.5rem;

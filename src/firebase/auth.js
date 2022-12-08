@@ -1,5 +1,8 @@
 import { app } from './index.js';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import profileStore from '../store/profile.js';
+
+const { user } = profileStore;
 
 const auth = getAuth(app); 
 const provider = new GoogleAuthProvider();
@@ -8,6 +11,7 @@ const loginWithGoogle = () => {
     signInWithPopup(auth, provider)
     .then((result) => {
         console.log('result', result);
+        user.value = result.user;
     })
     .catch((error) => {
         console.warn('error', error);
@@ -16,8 +20,9 @@ const loginWithGoogle = () => {
 
 const logout = () => {
     signOut(auth)
-    .then((result) => {
-        console.log('result',result);
+    .then(() => {
+        console.log('logout');
+        user.value = null;
     })
     .catch((error) => {
         console.warn('error',error);

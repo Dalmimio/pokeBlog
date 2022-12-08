@@ -1,6 +1,6 @@
 <script setup>
 
-    import { loginWithGoogle} from '../firebase/auth.js'
+    import { loginWithGoogle, logout} from '../firebase/auth.js'
 </script>
 
 <template>
@@ -31,8 +31,8 @@
             <button type="submit" @click="loginWithGoogle">
                 Log in
             </button>
-            <button type="submit">
-                Log in
+            <button type="submit" @click="logout">
+                Logout
             </button>
         </form>
 
