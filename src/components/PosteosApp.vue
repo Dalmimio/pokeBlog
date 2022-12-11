@@ -1,6 +1,9 @@
 <script setup>
 import CommentsApp from './CommentsApp.vue';
 import {ref} from 'vue'
+import { addComment, filterComments, comments } from '../firebase/comments.js';
+import { deletePost } from '../firebase/post.js'
+
 
 const props = defineProps({
     post: {},
@@ -8,18 +11,29 @@ const props = defineProps({
 })
 
 const textoComment = ref('')
-const comentarios = ref([
 
-])
-const agregarComent = () => {
-    const comment = {
+
+// y utiliza where a la base de datos y te los va a traer y el resto es solo guardarlo en un r
+
+const addNewComment = (id) => {
+    const newComment = {
         id: crypto.randomUUID(),
+        postId: id,
         body: textoComment.value
     }
-    comentarios.value.unshift(comment)
+    console.log(newComment);
+    addComment(newComment)
     textoComment.value = ''
-    console.log(comment);
+    console.log(comments.value)
+ 
+    
 }
+
+
+function deleteNewPost(id){
+    deletePost(id)
+}
+
 
 const guardarPost = (id) => {
     
@@ -27,6 +41,11 @@ const guardarPost = (id) => {
         props.post.save = !props.post.save
     }
 }
+const idPost = props.post.id;
+
+filterComments(idPost) 
+
+console.log(props.post.id);
 </script>
 
 <template>
@@ -37,9 +56,13 @@ const guardarPost = (id) => {
                 <p class="text-center">@UserName</p>
             </div>
 
-            <button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <font-awesome-icon class="trash" icon="fa-solid fa-trash-can" />
             </button>
+
+            <!-- Modal -->
+            
         </div>
         <div class="card-body text-white">
             <p class="card-text text-start">{{post.body}}</p>
@@ -58,18 +81,19 @@ const guardarPost = (id) => {
             </div>
             
             <div class="d-flex gap-2">
-                <input v-model="textoComment" type="text">
-                <button class="btn btn-comment" :disabled="!textoComment" @click="agregarComent">
+                <input v-model="textoComment">
+                <button class="btn btn-comment" :disabled="!textoComment"  @click.prevent="addNewComment(post.id)">
                     Post
                 </button>
+                
             </div>
             
         </div>
-        <div v-if="comentarios.length" class="comentarios-container d-flex justify-content-center p-1">
+        <div v-if="comments.length" class="comentarios-container d-flex justify-content-center p-1">
             <div class="linea "></div>
 
             <div class="d-flex flex-column gap-2 align-items-end mt-3 contenedor-comments">
-                <CommentsApp v-for="comment in comentarios" :comment="comment" :key="comment.id"/>
+                <CommentsApp v-for="comment in comments" :comment="comment" :key="comment.id"/>
             </div>
         </div>
         <div v-else>
@@ -77,6 +101,20 @@ const guardarPost = (id) => {
         </div>
 
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" ref="my-modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark">
+                <div class="modal-body">
+                    <h2>Seguro que quieres borrar este posteo?</h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" @click="deleteNewPost(post.id)">Yes</button>
+                </div>
+                </div>
+            </div>
+            </div>
     <!-- <div class="comments d-flex flex-column align-items-center gap-3">
             
             <div class="comentario text-start">

@@ -1,6 +1,7 @@
 <script setup>
 
     import { loginWithGoogle, logout} from '../firebase/auth.js'
+    import user from '../store/profile';
 </script>
 
 <template>
@@ -49,6 +50,9 @@
         <RouterLink to="/register">Sign up here</RouterLink>
         </div>
       </div>
+      <!-- <p v-if="user">{{user.displayName}}</p>
+
+      <img :src=" user ?user.photoURL:'https://github.com/Dalmimio/Img-blog/blob/main/perfil.jpg?raw=true'" alt="profile-icon" /> -->
     </main>
 </template>
 

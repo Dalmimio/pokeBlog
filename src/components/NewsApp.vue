@@ -1,40 +1,40 @@
 <script setup>  
      
-    import {ref, onMounted } from 'vue'
+    import {ref} from 'vue'
     import PosteosApp from './PosteosApp.vue'
-    // import Modal from './Modal.vue';
+    import  { addPost, posts} from '../firebase/post.js'
     
     const textoPost = ref('')
 
-    const posteosSaved = ref([
-        {
-            id: 1,
-            body: 'Hola, soy un posteo de prueba, mi posiion es, quetimporta'
-        },
-        {
-            id: 2,
-            body: 'Hola, soy otro posteo, se supone que debo hablar de pokemon, no? Diganme por favor que se me acaban los caracteres :C solo dan 150 ni que fue fuesen m'
-        },
-        {
-            id: 3,
-            body: 'Amarrete, danos mas caracteres'
-        }
-    ])
+   
+
+    const addNewPost = (id) => {
+    const newPost = {
+        id: crypto.randomUUID(),
+        body: textoPost.value
+    }
+    console.log(newPost);
+    addPost(newPost)
+    textoPost.value = ''
+    console.log(posts.value)
+ 
+    
+}
     
 
 
 
-const subirPost = () => {
-    console.log('Hola');
-      const post={
-        id: crypto.randomUUID(),
-        body: textoPost.value,
-        save: false
-      }
-        posteosSaved.value.unshift(post)
-        console.log(posteosSaved.value);
-        textoPost.value= ''
-}
+// const subirPost = () => {
+//     console.log('Hola');
+//       const post={
+//         id: crypto.randomUUID(),
+//         body: textoPost.value,
+//         save: false
+//       }
+//         posteosSaved.value.unshift(post)
+//         console.log(posteosSaved.value);
+//         textoPost.value= ''
+// }
 
 
          
@@ -44,14 +44,15 @@ const subirPost = () => {
 
 <template>
     <main class="d-flex flex-column align-items-center">
-    
+        
+        
         <div class="d-flex flex-column align-items-center mb-5">
             <!-- <input type="search" name="" id="search">
                 <div>
                 
                     <button class="btn btn-more">New post <font-awesome-icon icon="fa-regular fa-pen-to-square" /></button>
                 </div> -->
-            <form @submit.prevent="subirPost">
+            <form @submit.prevent="addNewPost">
                 <div class="post-creat d-flex flex-column gap-2 mt-3 align-items-center">
                     <textarea v-model="textoPost" maxlength="150" placeholder="Escribi algo a ver" name="" id="" cols="30"
                         rows="2"></textarea>
@@ -67,10 +68,10 @@ const subirPost = () => {
                 <PosteosApp v-for="post in posteos" :post="post" :key="post.id" />
             </div> -->
     
-        <div v-if="posteosSaved.length != 0"
+        <div v-if="posts.length != 0"
             class="contenedor post-container d-flex gap-2 flex-wrap align-items-center justify-content-center mt-3">
-    
-            <PosteosApp v-for="post in posteosSaved" :post="post" :key="post.id" :arrayP="post" />
+             
+            <PosteosApp v-for="post in posts" :post="post" :key="post.id" :arrayP="post" />
     
         </div>
     

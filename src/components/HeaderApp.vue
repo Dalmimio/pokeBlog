@@ -42,7 +42,7 @@
            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column gap-2 ">
-            <RouterLink to="/" class=""><font-awesome-icon icon="fa-solid fa-house-chimney" /><span>Home</span></RouterLink>
+            <RouterLink to="/"><font-awesome-icon icon="fa-solid fa-house-chimney" /><span>Home</span></RouterLink>
             <RouterLink to="/profile"><font-awesome-icon icon="fa-solid fa-user" /><span>Profile</span></RouterLink>
             <RouterLink to="/news"><font-awesome-icon icon="fa-solid fa-newspaper" /><span>News</span></RouterLink>
             <RouterLink to="/save"><font-awesome-icon icon="fa-solid fa-heart" /><span>Loves</span></RouterLink>

@@ -1,8 +1,7 @@
 import { app } from './index.js';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import profileStore from '../store/profile.js';
+import user from '../store/profile.js';
 
-const { user } = profileStore;
 
 const auth = getAuth(app); 
 const provider = new GoogleAuthProvider();

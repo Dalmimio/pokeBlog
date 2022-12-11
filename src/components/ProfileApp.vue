@@ -1,12 +1,14 @@
 <script setup>
+    import user from '../store/profile.js';
+    
 </script>
 
 <template>
     <main class="d-flex flex-column align-items-center">
         <div class="header d-flex gap-3 justify-content-between">
-            <img src="https://github.com/Dalmimio/Img-blog/blob/main/perfil.jpg?raw=true" alt="profile-icon">
+            <img :src="user? user.photoURL : 'https://github.com/Dalmimio/Img-blog/blob/main/perfil.jpg?raw=true'" alt="profile-icon" >
             <div class="text-start align-self-center">
-                <h3>Gunter</h3>
+                <h3 >{{user?user.displayName:'Unregistered'}}</h3>
                 <p class="username">@ SoyGunter69</p>
             </div>
             <RouterLink to="/settings">
