@@ -2,7 +2,7 @@
      
     import {ref} from 'vue'
     import PosteosApp from './PosteosApp.vue'
-    import  { addPost, posts} from '../firebase/post.js'
+    import  {addPost, posts} from '../firebase/post.js'
     
     const textoPost = ref('')
 
@@ -11,7 +11,8 @@
     const addNewPost = (id) => {
     const newPost = {
         id: crypto.randomUUID(),
-        body: textoPost.value
+        body: textoPost.value,
+        save: false,
     }
     console.log(newPost);
     addPost(newPost)

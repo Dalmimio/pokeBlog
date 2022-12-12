@@ -1,8 +1,18 @@
 <script setup>
 import CommentsApp from './CommentsApp.vue';
 import {ref} from 'vue'
-import { addComment, filterComments, comments } from '../firebase/comments.js';
-import { deletePost } from '../firebase/post.js'
+import { addComment, comments} from '../firebase/comments.js';
+import { deletePost, savePost} from '../firebase/post.js'
+
+const idPost = props.post.id;
+
+
+const commentsFilter = comments.value.filter(comment => comment.postId == idPost)
+
+
+console.log('idPost: ' + idPost + 'tiene estos comentarios: ');
+console.table(commentsFilter);
+
 
 
 const props = defineProps({
@@ -13,7 +23,6 @@ const props = defineProps({
 const textoComment = ref('')
 
 
-// y utiliza where a la base de datos y te los va a traer y el resto es solo guardarlo en un r
 
 const addNewComment = (id) => {
     const newComment = {
@@ -34,18 +43,23 @@ function deleteNewPost(id){
     deletePost(id)
 }
 
-
-const guardarPost = (id) => {
+const estado = props.post.save
+console.log(estado + ' estado del post');
+function saveNewPost(id) {
+    console.log(props.post);
     
-    if (props.post.id === id) {
-        props.post.save = !props.post.save
-    }
+       savePost(id, {save: !estado})
+       
+    
 }
-const idPost = props.post.id;
 
-filterComments(idPost) 
 
-console.log(props.post.id);
+    
+    // if (props.post.id === id) {
+    //     props.post.save = !props.post.save
+    // }
+
+    
 </script>
 
 <template>
@@ -70,7 +84,7 @@ console.log(props.post.id);
         <div class="card-footer d-flex gap-3 flex-column">
             <div class="d-flex gap-4 justify-content-between">
                 <div class="d-flex gap-4">
-                    <button @click="guardarPost(post.id)">
+                    <button @click="saveNewPost(post.id)">
                         <font-awesome-icon :class="post.save? 'icon-fav-y' : 'icon-fav-n'" icon="fa-solid fa-heart" />
                     </button>
                     <button>
@@ -89,11 +103,11 @@ console.log(props.post.id);
             </div>
             
         </div>
-        <div v-if="comments.length" class="comentarios-container d-flex justify-content-center p-1">
+        <div v-if="commentsFilter.length" class="comentarios-container d-flex justify-content-center p-1">
             <div class="linea "></div>
 
             <div class="d-flex flex-column gap-2 align-items-end mt-3 contenedor-comments">
-                <CommentsApp v-for="comment in comments" :comment="comment" :key="comment.id"/>
+                <CommentsApp v-for="comment in commentsFilter" :comment="comment" :key="comment.id"/>
             </div>
         </div>
         <div v-else>
