@@ -2,6 +2,20 @@
 
     import { loginWithGoogle, logout} from '../firebase/auth.js'
     import user from '../store/profile';
+    import router from '../router/index.js'
+    import { computed } from 'vue'
+
+    const login = () => {
+     loginWithGoogle()
+    }
+
+// computed function
+
+const changeUser = computed(() => {
+  if(user){
+    console.log(user.displayName);
+  }
+})
 </script>
 
 <template>
@@ -13,7 +27,7 @@
             It's quick & simple
         </p>
         <form action="">
-            
+<!--             
             <div class="textbox">
                 <input type="mail" name="" id="" required>
             <label>Mail</label>
@@ -27,18 +41,25 @@
             <span>
                 <font-awesome-icon icon="fa-solid fa-key" />
             </span>
-            </div>
+            </div> -->
             
-            <button type="submit" @click="loginWithGoogle">
-                Log in
+            <button type="submit" @click="login">
+                Log in with google
             </button>
-            <button type="submit" @click="logout">
+            <!-- <button type="submit" @click="logout">
                 Logout
-            </button>
+            </button> -->
         </form>
-
         
-      <div class="d-flex align-items-center justify-content-center flex-column footer mt-5">
+            <!-- user card from firebase -->
+            <div v-if="user" class="userCard">
+                <img :src="user.photoURL" alt="user photo" />
+                <h2>{{ user.displayName }}</h2>
+                <p>{{ user.email }}</p>
+            </div>
+       
+        
+      <!-- <div class="d-flex align-items-center justify-content-center flex-column footer mt-5">
         <div class="d-flex align-items-center gap-3">
             <p>Forgot password?</p>
         <RouterLink to="/register"> Click Here</RouterLink>
@@ -49,7 +70,7 @@
         </p>
         <RouterLink to="/register">Sign up here</RouterLink>
         </div>
-      </div>
+      </div> -->
       <!-- <p v-if="user">{{user.displayName}}</p>
 
       <img :src=" user ?user.photoURL:'https://github.com/Dalmimio/Img-blog/blob/main/perfil.jpg?raw=true'" alt="profile-icon" /> -->

@@ -1,13 +1,16 @@
 <script setup>  
      
-    import {ref} from 'vue'
+    import {ref, onMounted} from 'vue'
     import PosteosApp from './PosteosApp.vue'
-    import  {addPost, posts} from '../firebase/post.js'
+    import  {addPost, posts, getPost} from '../firebase/post.js'
     
-    const textoPost = ref('')
 
-   
+    onMounted(() => {
+        getPost()
+    })
 
+
+    const textoPost = ref('') 
     const addNewPost = (id) => {
     const newPost = {
         id: crypto.randomUUID(),

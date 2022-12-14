@@ -12,6 +12,7 @@
     <div class="d-flex contenedor gap-2">
         <div class="lineH"></div>
         <div class="comment d-flex justify-content-center">
+            <h3>{{ comment.name }}</h3>
             <p>{{comment.body}}</p>
         </div>
         <button @click=deleteComment(comment.id)>
